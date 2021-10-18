@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EFCRUD.Models.BlogCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- .page-inner -->
+<div class="page-inner">
+    @Html.Partial("~/Views/Shared/_PageHeader.cshtml", ViewData["table"])
+    <!-- .page-section -->
+    <div class="page-section">
+        <!-- .card -->
+        <div class="card">
+            <!-- .card-header -->
+            <div class="card-header text-right">
+                <a href="@Url.Action("Create","BlogCategories")" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> Add Category </a>
+            </div><!-- /.card-header -->
+            <!-- .card-body -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <!-- .table -->
+                    <table id="studentTable" class="table">
+                        <!-- thead -->
+                        <thead>
+                            <tr>
+                                <th>Title </th>
+                                <th>Short Description </th>
+                                <th>Category</th>
+                                <th>Image </th>
+                                <th>Action </th>
+                            </tr>
+                        </thead><!-- /thead -->
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Category)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table><!-- /.table -->
+                </div>
+
+            </div><!-- /.card-body -->
+        </div><!-- /.card -->
+    </div><!-- /.page-section -->
+</div>
+
+@section footer_script{
+    <script>
+        $(document).ready(function () {
+            $("#studentTable").DataTable();
+        });
+    </script>
+}

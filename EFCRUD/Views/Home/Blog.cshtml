@@ -1,0 +1,53 @@
+﻿@model EFCRUD.Controllers.viewmodel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="pt-2">
+        <div class="">
+            <div class="col-12">
+                <div class="card bg-dark-overlay-5 overflow-hidden card-bg-scale h-400 text-center" style="background-image: url(~/assets/images/BlogImage/blog_0310202101.jpg);background-position: center left;background-size: cover;">
+                    <div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
+                        <div class="w-100 my-auto">
+                            <h2 class="text-white display-5">Blog</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        @foreach (var blog in Model.blog)
+        {
+
+            <div class="col-lg-4 my-2 d-flex align-items-stretch">
+                <a href="@Url.Action("BlogDetail","Home",new {id=blog.Id })" class="text-dark text-decoration-none align-items-stretch">
+                    <div class="card">
+                        <img src="~/assets/images/BlogImage/@blog.image" width="100%" height="auto" class="card-img-top" />
+                        <div class="card-body pb-1">
+                            <h5 class="fs-5 fw-bold text-capitalize">@blog.Title</h5>
+                            <span></span>
+                            <p class="mb-1 text-muted text-truncate">@blog.ShortDescription</p>
+                            <ul class="nav nav-divider align-items-center d-flex">
+                                <li class="nav-item">
+                                    <div class="nav-link px-1">
+                                        <div class="d-flex align-items-center position-relative">
+                                            <div class="avatar avatar-xs">
+                                                <img class="avatar-img rounded-circle card-img" src="~/assets/images/avatars/team4.jpg" alt="avatar">
+                                            </div>
+                                            <span class="ms-2 me-1">by <a href="#" class="stretched-link text-reset btn-link text-decoration-none">Samuel</a></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item ms-2">@blog.UpadateOn</li>
+                            </ul>
+                            @*<a href="@Url.Action("BlogDetail","Home",new {id=blog.Id })">read More...</a>*@
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿<link rel="stylesheet" href="~/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="~/assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="~/assets/vendor/flatpickr/flatpickr.min.css">
+@*<link href="~/assets/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" />*@
+<link href="~/assets/stylesheets/datatables.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/assets/stylesheets/theme.min.css" data-skin="default">
+<link rel="stylesheet" href="~/assets/stylesheets/theme-dark.min.css" data-skin="dark">
+<link rel="stylesheet" href="~/assets/stylesheets/custom.css">
+
+<script>
+    var skin = localStorage.getItem('skin') || 'default';
+    var disabledSkinStylesheet = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
+    // Disable unused skin immediately
+    disabledSkinStylesheet.setAttribute('rel', '');
+    disabledSkinStylesheet.setAttribute('disabled', true);
+    // add loading class to html immediately
+    document.querySelector('html').classList.add('loading');
+</script>

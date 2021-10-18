@@ -1,0 +1,16 @@
+﻿<!-- .page-title-bar -->
+<header class="page-title-bar">
+    <!-- .breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <a href="@Url.Action("Index","Home")"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Home</a>
+            </li>
+        </ol>
+    </nav><!-- /.breadcrumb -->
+   
+    <div class="d-md-flex align-items-md-start">
+        <h1 class="page-title mr-sm-auto"> @ViewData["table"]  </h1><!-- .btn-toolbar -->
+        <div id="dt-buttons" class="btn-toolbar"></div><!-- /.btn-toolbar -->
+    </div><!-- /title and toolbar -->
+</header><!-- /.page-title-bar -->
