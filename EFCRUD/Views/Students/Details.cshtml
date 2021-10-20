@@ -1,0 +1,147 @@
+﻿@model EFCRUD.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- .page-inner -->
+<div class="page-inner">
+    @Html.Partial("~/Views/Shared/_PageHeader.cshtml", ViewData["table"])
+    <!-- .page-section -->
+    <div class="page-section">
+        <!-- .card -->
+        <div class="card">
+            <!-- .card-header -->
+            <div class="card-header text-right">
+                <a href="@Url.Action("Index", "Students")" class="btn btn-outline-primary">
+                    Back
+                </a>
+                <a href="@Url.Action("Edit", "Students", new { id = Model.Id })" class="btn btn-primary">
+                    Edit
+                </a>
+            </div><!-- /.card-header -->
+            <!-- .card-body -->
+            <div class="card-body">
+                <div class="col-lg-6">
+                    <div class="table-responsive">
+                        <!-- .table -->
+                        <table id="" class="table table-bordered">
+                            <!-- thead -->
+                            <thead>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Name)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Dob)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Dob)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.MobileNo)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.MobileNo)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Email)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Qualification)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Qualification)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.PassedOut)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.PassedOut)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.AddressLine1)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.AddressLine1)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.AddressLine2)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.AddressLine2)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.City.CityName)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.City.CityName)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Country.CountryName)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Country.CountryName)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Course.CourseName)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Course.CourseName)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.State.StateName)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.State.StateName)
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary">
+                                        @Html.DisplayNameFor(model => model.Zipcode)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Zipcode)
+                                    </td>
+                                </tr>
+
+
+                            </thead><!-- /thead -->
+                        </table><!-- /.table -->
+                    </div>
+                </div>
+
+            </div><!-- /.card-body -->
+        </div><!-- /.card -->
+    </div><!-- /.page-section -->
+</div>

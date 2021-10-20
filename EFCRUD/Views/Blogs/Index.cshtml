@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EFCRUD.Models.Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- .page-inner -->
+<div class="page-inner">
+    @Html.Partial("~/Views/Shared/_PageHeader.cshtml", ViewData["table"])
+    <!-- .page-section -->
+    <div class="page-section">
+        <!-- .card -->
+        <div class="card">
+            <!-- .card-header -->
+            <div class="card-header text-right">
+                <a href="@Url.Action("Create","Blogs")" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> Add Blog </a>
+            </div><!-- /.card-header -->
+            <!-- .card-body -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <!-- .table -->
+                    <table id="studentTable" class="table">
+                        <!-- thead -->
+                        <thead>
+                            <tr>
+                                <th>Title </th>
+                                <th>Short Description </th>
+                                <th>Category</th>
+                                <th>Image </th>
+                                <th>Action </th>
+                            </tr>
+                        </thead><!-- /thead -->
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BlogCategory.Category)
+                                </td>
+                                <td>
+                                    <img src="~/assets/images/BlogImage/@item.image.ToString()" width="100" height="100" />
+                                </td>
+                                <td class="d-flex">
+                                    <a href="@Url.Action("Edit", "Blogs", new { id = item.Id })" class="btn btn-sm btn-icon btn-secondary d-inline-block mr-2"><i class="fa fa-pencil-alt"></i> <span class="sr-only">Edit</span></a>
+                                    <a href="@Url.Action("Delete", "Blogs", new { id = item.Id })" class="btn btn-sm btn-icon btn-secondary d-inline-block"><i class="far fa-trash-alt"></i> <span class="sr-only">Remove</span></a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table><!-- /.table -->
+                </div>
+
+            </div><!-- /.card-body -->
+        </div><!-- /.card -->
+    </div><!-- /.page-section -->
+</div>
+
+@section footer_script{
+    <script>
+        $(document).ready(function () {
+            $("#studentTable").DataTable();
+        });
+    </script>
+}

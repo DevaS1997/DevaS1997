@@ -1,0 +1,422 @@
+﻿@*@model IEnumerable<EFCRUD.Models.Blog>*@
+@model EFCRUD.Controllers.viewmodel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/assets/images/banner/header.jpg" class="bd-placeholder-img" width="100%" />
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Example headline.</h1>
+                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                </div>
+            </div>
+            <div class="overlay-background"></div>
+        </div>
+        <div class="carousel-item">
+            <img src="~/assets/images/BlogImage/blog_0310202102.jpg" class="bd-placeholder-img" width="100%" />
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        @*<div class="carousel-item">
+
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>One more for good measure.</h1>
+                        <p>Some representative placeholder content for the third slide of this carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<section>
+    <div class="container ">
+        <div class="row mx-0">
+            @*@foreach (var item in Model)
+                {
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="d-lg-flex">
+                                <img src="~/Image/user1-128x128.jpg" width="100" height="100" alt="" class="rounded-pill border p-1 me-2" />
+                                <div cl>
+                                    <h5 class="fs-5 fw-bold text-capitalize">@item.Name</h5>
+                                    <a href="@Url.Action("Details","Students",new { id=item.Id})" class=""> View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @for (int i = 0; i < 4; i++)
+                {
+
+                    <div class="col-lg-3 my-2">
+                        <a href="#" class="text-dark text-decoration-none">
+                            <div class="card">
+                                <img src="~/Image/user8-128x128.jpg" width="100%" height="auto" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="fs-5 fw-bold text-capitalize">Product @(i+1)</h5>
+                                    <p class="mb-1 text-muted">lorem ispum lorem ispum lorem ispumlorem ispumlorem ispumlorem ispum</p>
+                                    <span class="text-success">rs.600</span> <span class="mx-1 text-muted">|</span> <span class="text-decoration-line-through text-muted">rs.700</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+
+                @for (int i = 0; i < 4; i++)
+                {
+
+                    <div class="col-lg-3 my-2">
+                        <a href="#" class="text-dark text-decoration-none">
+                            <div class="card position-relative">
+                                <img src="~/Image/user4-128x128.jpg" width="100%" height="auto" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="fs-5 fw-bold text-capitalize">Product @(i+1)</h5>
+                                    <p class="mb-1 text-muted">lorem ispum lorem ispum lorem ispumlorem ispumlorem ispumlorem ispum</p>
+                                    <div class="d-flex justify-content-between align-content-center">
+                                        <div>
+                                            <span class="text-success">rs.600</span> <span class="mx-1 text-muted">|</span> <span class="text-decoration-line-through text-muted">rs.700</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge alert-success position-absolute top-0 right-0 mt-2 me-2">In Stock</span>
+                                    <span class="badge alert-warning position-absolute top-0 mt-2 rounded-pill">Compare</span>
+                                </div>
+                                <div class="row mx-0 border-top">
+                                    <div class="col-6 p-0">
+                                        <a href="javascript:void(0)" class="btn btn-success btn-block d-block border-0 m-0 py-2 rounded-0">Add To Card</a>
+                                    </div>
+                                    <div class="col-6 p-0 border-start">
+                                        <a href="javascript:void(0)" class="btn btn-warning btn-block d-block border-0 m-0 py-2 rounded-0">Wish List</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                }*@
+            @*<div class="py-5">
+                    <h1 class="display-5 fw-bold mb-3 text-center">About</h1>
+                </div>*@
+            <div class="row mb-5">
+                <div class="col-md-6 m-auto text-center">
+                    <h1>About</h1>
+                    <p class="lead text-muted">See how your users experience your website in realtime or view trends to see any changes .</p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <p><img src="~/assets/images/banner/about_3.png" alt="" width="100%"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="icon-box text-center">
+                        <div class="mb-3"><i class="bi bi-columns fs-1 text-primary lh-1"></i></div>
+                        <h6>Visual Composer</h6>
+                        <div class="icon-box-content">
+                            <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum amet.</p>
+                        </div>
+                        <div class="text-decoration-none"><a href="#" class="text-decoration-none">Read more</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="icon-box text-center">
+                        <div class="mb-3"><i class="bi bi-trophy fs-1 text-primary lh-1"></i></div>
+                        <h6>Revolution Slider</h6>
+                        <div class="icon-box-content">
+                            <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum amet.</p>
+                        </div>
+                        <div class="text-decoration-none"><a href="#" class="text-decoration-none">Read more</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="icon-box text-center">
+                        <div class="mb-3"><i class="bi bi-hdd-stack fs-1 text-primary lh-1"></i></div>
+                        <h6>User Experience</h6>
+                        <div class="icon-box-content">
+                            <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum amet.</p>
+                        </div>
+                        <div class="text-decoration-none"><a href="#" class="text-decoration-none">Read more</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="icon-box text-center">
+                        <div class="mb-3"><i class="bi bi-tv fs-1 text-primary lh-1"></i></div>
+                        <h6>Fully Responsive</h6>
+                        <div class="icon-box-content">
+                            <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum amet.</p>
+                        </div>
+                        <div class="text-decoration-none"><a href="#" class="text-decoration-none">Read more</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*<section class="">
+        <div class="container">
+            <div class="">
+                <h1 class="display-5 fw-bold mb-5 text-center">Drivers</h1>
+            </div>
+            <div class="row">
+                @foreach (var blog in Model.blog)
+                {
+                    <div class="col-lg-6 my-2 d-flex align-items-stretch driver">
+                        @* <a href="@Url.Action("BlogDetail","Home",new {id=blog.Id })" class="text-dark text-decoration-none align-items-stretch">*
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-5">
+                    <img src="~/assets/images/BlogImage/@blog.image" width="100%" height="auto" class="card-img-top" />
+                </div>
+                <div class="col-lg-7">
+                    <h5 class="fs-5 fw-bold text-capitalize">Name</h5>
+                    <span></span>
+                    <p class="mb-1 text-muted text-truncate">NMLS ID#2024323</p>
+                    <p class="">Denver, Colorado</p>
+                    <ul class="nav nav-divider align-items-center d-flex">
+                        <li class="nav-item">
+                            <img src="~/assets/images/logo/vector.svg" width="20" height="20" class="card-img-top" />
+                        </li>
+                        <li class="nav-item mx-2">
+                            <span class="bg-success rounded py-1 px-2 text-white small">5.0</span>
+                        </li>
+                        <li>
+                            <span class="mx-1"><i class="bi bi-star-fill text-warning fs-4"></i> </span>
+                            <span class="mx-1"><i class="bi bi-star-fill text-warning fs-4"></i> </span>
+                            <span class="mx-1"><i class="bi bi-star-fill text-warning fs-4"></i> </span>
+                            <span class="mx-1"><i class="bi bi-star-fill text-warning fs-4"></i> </span>
+                            <span class="mx-1"><i class="bi bi-star-fill text-warning fs-4"></i> </span>
+                            <span>12 ratings</span>
+                        </li>
+                        <li class="mt-3">
+                            <button class="btn btn-primary btn-sm"><i class="bi bi-phone-vibrate fs-6 me-1"></i>  Call Now</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            @*<a href="@Url.Action("BlogDetail","Home",new {id=blog.Id })">read More...</a>*
+        </div>
+    </div>
+    @*</a>*
+                    </div>
+                }
+            </div>
+        </div>
+    </section>*@
+
+<section>
+    <div class="container">
+        @*<div class="">
+                <h1 class="display-5 fw-bold mb-5 text-center">Service</h1>
+            </div>*@
+        <div class="row mb-5">
+            <div class="col-md-6 m-auto text-center">
+                <h1>Service</h1>
+                <p class="lead text-muted">See how your users experience your website in realtime or view trends to see any changes in performance over time.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-12 d-flex align-items-lg-stretch mb-lg-4 mb-2">
+                <!-- card -->
+                <div class="card mb-0 mb-lg-0">
+                    <!-- card body -->
+                    <div class="card-body p-5">
+                        <!-- icon -->
+                        <div class="mb-3"><i class="bi bi-columns fs-1 text-primary lh-1"></i></div>
+                        <h3 class="mb-2">Visual Composer</h3>
+                        <p class="mb-0">
+                            Quis cursus turpis in habitant sagittis amet dolor malesuada ut. Volutpat nunc id
+                            blanvolutpat nunc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12 d-flex align-items-lg-stretch mb-lg-4 mb-2">
+                <!-- card -->
+                <div class="card mb-0 mb-lg-0">
+                    <!-- card body -->
+                    <div class="card-body p-5">
+                        <!-- icon -->
+                        <div class="mb-3"><i class="bi bi-image fs-1 text-primary lh-1 "></i></div>
+                        <h3 class="mb-2">Revolution Slider</h3>
+                        <p class="mb-0">
+                            Quis cursus turpis in habitant sagittis amet dolor malesuada ut. Volutpat nunc id
+                            blanvolutpat nunc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 d-flex align-items-lg-stretch mb-lg-4 mb-2">
+                <!-- card -->
+                <div class="card mb-0 mb-lg-0">
+                    <!-- card body -->
+                    <div class="card-body p-5">
+                        <!-- icon -->
+                        <div class="mb-3"><i class="bi bi-archive fs-1 text-primary lh-1"></i></div>
+                        <h3 class="mb-2">User Experience</h3>
+                        <p class="mb-0">
+                            Quis cursus turpis in habitant sagittis amet dolor malesuada ut. Volutpat nunc id
+                            blanvolutpat nunc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12 d-flex align-items-lg-stretch mb-lg-4 mb-2">
+                <!-- card -->
+                <div class="card mb-0 mb-lg-0">
+                    <!-- card body -->
+                    <div class="card-body p-5">
+                        <!-- icon -->
+                        <div class="mb-3"><i class="bi bi-headset fs-1 text-primary lh-1 "></i></div>
+                        <h3 class="mb-2">Great Support</h3>
+                        <p class="mb-0">
+                            Quis cursus turpis in habitant sagittis amet dolor malesuada ut. Volutpat nunc id
+                            blanvolutpat nunc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 d-flex align-items-lg-stretch mb-lg-4 mb-2">
+                <!-- card -->
+                <div class="card mb-0 mb-lg-0">
+                    <!-- card body -->
+                    <div class="card-body p-5">
+                        <!-- icon -->
+                        <div class="mb-3"><i class="bi bi-display fs-1 text-primary lh-1"></i></div>
+                        <h3 class="mb-2">Fully Responsive</h3>
+                        <p class="mb-0">
+                            Quis cursus turpis in habitant sagittis amet dolor malesuada ut. Volutpat nunc id
+                            blanvolutpat nunc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 d-flex align-items-lg-stretch mb-lg-4 mb-2">
+                <!-- card -->
+                <div class="card mb-0 mb-lg-0">
+                    <!-- card body -->
+                    <div class="card-body p-5">
+                        <!-- icon -->
+                        <div class="mb-3"><i class="bi bi-vector-pen fs-1 text-primary lh-1"></i></div>
+                        <h3 class="mb-2">Trendy Design</h3>
+                        <p class="mb-0">
+                            Quis cursus turpis in habitant sagittis amet dolor malesuada ut. Volutpat nunc id
+                            blanvolutpat nunc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <p class="text-center"><a class="btn rounded-pill btn-outline-primary px-4" href="@Url.Action("service","home")">More</a></p>
+</section>
+
+<section class="">
+    <div class="container">
+        @*<div class="py-5">
+                <h1 class="display-5 fw-bold mb-3 text-center">Latest articles.</h1>
+            </div>*@
+        <div class="row mb-5">
+            <div class="col-md-6 m-auto text-center">
+                <h1>Latest articles</h1>
+                <p class="lead text-muted">See how your users experience your website in realtime or view trends to see any changes in performance over time.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var blog in Model.blog)
+            {
+
+                <div class="col-lg-4 my-2 d-flex align-items-stretch">
+                    <a href="@Url.Action("BlogDetail","Home",new {id=blog.Id })" class="text-dark text-decoration-none align-items-stretch">
+                        <div class="card">
+                            <img src="~/assets/images/BlogImage/@blog.image" width="100%" height="auto" class="card-img-top" />
+                            <div class="card-body pb-1">
+                                <h5 class="fs-5 fw-bold text-capitalize">@blog.Title</h5>
+                                <span></span>
+                                <p class="mb-1 text-muted text-truncate">@blog.ShortDescription</p>
+                                @*<div>
+                                    @for (var i = 0; i < blog.rating; i++)
+                                    {
+                                        <span class="mx-1"><i class="bi bi-star-fill text-warning fs-4"></i> </span>
+                                    }
+                                    @for (var i = blog.rating + 1; i <= 5; i++)
+                                    {
+                                        <span class="mx-1"><i class="bi bi-star fs-4"></i> </span>
+                                    }
+                                    <span class="fs-5">@blog.rating ratings</span>
+                                </div>*@
+                                <ul class="nav nav-divider align-items-center d-flex">
+                                    <li class="nav-item">
+                                        <div class="nav-link px-1">
+                                            <div class="d-flex align-items-center position-relative">
+                                                <div class="avatar avatar-xs">
+                                                    <img class="avatar-img rounded-circle card-img" src="~/assets/images/avatars/team4.jpg" alt="avatar">
+                                                </div>
+
+                                                <span class="ms-2 me-1">by <a href="#" class="stretched-link text-reset btn-link text-decoration-none">@blog.updatedby</a></span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item ms-2">@blog.UpadateOn.Value.ToString("dd MMM yyyy")</li>
+
+                                </ul>
+                                @*<a href="@Url.Action("BlogDetail","Home",new {id=blog.Id })">read More...</a>*@
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!--<div class="bg-primary">
+    <div class="container">-->
+<!-- row -->
+<!--<div class="row align-items-center g-0">
+    <div class="col-xl-6 col-lg-6 col-md-12">-->
+<!-- heading -->
+<!--<div class="pt-5 py-lg-5">
+        <h3 class="text-white display-5 fw-bold pe-lg-8">Subscribe With Us</h3>
+        <p class="text-white fs-5 small">get latest things</p>
+    </div>
+</div>-->
+<!-- img -->
+<!--<div class=" col-xl-6 col-lg-6 col-md-12 text-lg-end text-center pt-6">
+                <div class="input-group">
+                    <input type="text" name="email" id="email" class="form-control-lg form-control py-3 rounded-0" placeholder="Enter Email" />
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

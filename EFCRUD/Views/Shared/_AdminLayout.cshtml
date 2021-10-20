@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/assets/images/logo/logo.png" />
+    <title>@ViewBag.Title - Admin</title>
+
+    @Html.Partial("_Css")
+    @RenderSection("Style", false)
+</head>
+<body>
+    <div class="app">
+        <!--[if lt IE 10]>
+          <div class="page-message" role="alert">You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
+        <![endif]-->
+        @Html.Partial("_AdminTopBar")
+        @Html.Partial("_AdminSideBar")
+        <main class="app-main">
+            <!-- .wrapper -->
+            <div class="wrapper">
+                <!-- .page -->
+                <div class="page">
+                    <!-- .page-inner -->
+                    @RenderBody()
+                </div><!-- /.page -->
+            </div><!-- .app-footer -->
+            <!-- /.wrapper -->
+        </main><!-- /.app-main -->
+    </div>
+
+
+    @Html.Partial("_Script")
+    @RenderSection("footer_script", false);
+</body>
+</html>

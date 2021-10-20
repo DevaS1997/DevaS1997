@@ -1,0 +1,170 @@
+﻿@model IEnumerable<EFCRUD.Models.User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@foreach (var item in Model)
+{
+    <div class="page-inner">
+        <div class="page-section">
+            <div class="card">
+                <div class="card-header bg-white d-flex justify-content-between">
+                    <div class="d-flex">
+                        @if (item.image != null)
+                        {
+                            <a href="user-profile.html" class="user-avatar user-avatar-xl mr-3">
+                                <img src="~/assets/images/userImage/@item.image" alt="">
+                            </a>
+                        }
+                        else
+                        {
+                        <a href="user-profile.html" class="user-avatar user-avatar-xl mr-3">
+                            <img src="~/assets/images/avatars/team4.jpg" alt="">
+                        </a>
+                        }
+                        <div>
+                            <h2 class="h4 mt-2 mb-1"> @item.firstname @item.lastname </h2>
+                            <p class="text-muted mb-1"> @item.email </p>
+                            <p class="text-muted"> @item.phoneno </p>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-primary">Change Profile</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 d-flex align-items-lg-stretch">
+                    <div class="card w-100">
+                        <div class="card-header bg-white">
+                            <h2 class="h4 mt-2 mb-1"> My Profile </h2>
+                            <p class="text-muted small mb-0">about your self</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>Name</th>
+                                        <td>@item.firstname @item.lastname</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>@item.email</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile</th>
+                                        <td>@item.phoneno</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Skills</th>
+                                        <td>Beni Arisandi</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Qualification</th>
+                                        <td>Beni Arisandi</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Passed Out</th>
+                                        <td>Beni Arisandi</td>
+                                    </tr>
+                                    <tr>
+                                        <th>School Name</th>
+                                        <td>Beni Arisandi</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 d-flex align-items-lg-stretch">
+                    <div class="card w-100">
+                        <div class="card-header">
+                            <h2 class="h5 mt-2 mb-1"> Courses </h2>
+                            <p class="text-muted small mb-0">my courses</p>
+                        </div>
+                        <div class="card-body">
+                            @for (int i = 0; i < 3; i++)
+                            {
+                                <div class="card">
+                                    <div class="card-header border-0" id="headingCompletedTodo@(i)">
+                                        <button class="btn btn-block btn-reset d-flex justify-content-between collapsed" data-toggle="collapse" data-target="#completedTodo@(i)" aria-expanded="false" aria-controls="completedTodo@(i)">
+                                            <span>Dotnet</span> <span class="collapse-indicator"><i class="fa fa-fw fa-chevron-down"></i></span>
+                                        </button>
+                                    </div>
+                                    <div id="completedTodo@(i)" class="collapse" aria-labelledby="headingCompletedTodo@(i)">
+                                        <div class="card-body pt-0">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-striped">
+                                                    <tr>
+                                                        <th>Instructor</th>
+                                                        <td>Beni Arisandi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Duration</th>
+                                                        <td>Beni Arisandi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Jointed Date</th>
+                                                        <td>Beni Arisandi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Completion Date</th>
+                                                        <td>Beni Arisandi</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 d-flex align-items-lg-stretch">
+                    <div class="card w-100">
+                        <div class="card-header bg-white">
+                            <h2 class="h4 mt-2 mb-1"> My Intersted </h2>
+                            <p class="text-muted small mb-0">about your self</p>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary rounded-pill text-white p-2 mr-1 mb-1">Reading</span>
+                            <span class="badge bg-primary rounded-pill text-white p-2 mr-1 mb-1">Reading</span>
+                            <span class="badge bg-primary rounded-pill text-white p-2 mr-1 mb-1">Reading</span>
+                            <span class="badge bg-primary rounded-pill text-white p-2 mr-1 mb-1">Reading</span>
+                            <span class="badge bg-primary rounded-pill text-white p-2 mr-1 mb-1">Reading</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-lg-stretch">
+                    <div class="card w-100">
+                        <div class="card-header bg-white d-flex justify-content-between">
+                            <div>
+                                <h2 class="h4 mt-2 mb-1"> Build Your Resume </h2>
+                                <p class="text-muted small mb-0">about your self</p>
+                            </div>
+                            <button class="btn btn-primary">Resume Builder</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-baseline">
+                                    <i class="fas fa-file-alt font-size-lg mr-2"></i>
+                                    <div>
+                                        <h2 class="h6 mt-2 mb-1">Resume </h2>
+                                        <a class="text-linkedin">View</a> | <a class="text-linkedin">Download</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="badge badge-success d-block mb-2">active</span>
+                                    <a class="btn btn-primary btn-sm text-white">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+

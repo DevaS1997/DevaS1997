@@ -1,0 +1,78 @@
+﻿@model IEnumerable<EFCRUD.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- .page-inner -->
+<div class="page-inner">
+    @Html.Partial("~/Views/Shared/_PageHeader.cshtml", ViewData["table"])
+    <!-- .page-section -->
+    <div class="page-section">
+        <!-- .card -->
+        <div class="card">
+            <!-- .card-header -->
+            <div class="card-header text-right">
+                <a href="@Url.Action("Create","Courses")" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> Add Student </a>
+            </div><!-- /.card-header -->
+            <!-- .card-body -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <!-- .table -->
+                    <table id="courseTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CourseName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Duration)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Fees)
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CourseName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Duration)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fees)
+                                    </td>
+                                    <td class="">
+                                        <a href="@Url.Action("Edit", "Courses", new { id = item.Id })" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-pencil-alt"></i> <span class="sr-only">Edit</span></a>
+                                        <a href="@Url.Action("Delete", "Courses", new { id = item.Id })" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i> <span class="sr-only">Remove</span></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table><!-- /.table -->
+                </div>
+
+            </div><!-- /.card-body -->
+        </div><!-- /.card -->
+    </div><!-- /.page-section -->
+</div>
+
+@section footer_script{
+    <script>
+        $(document).ready(function () {
+            $("#courseTable").DataTable();
+        });
+    </script>
+}

@@ -1,0 +1,17 @@
+﻿<script src="~/assets/vendor/jquery/jquery.min.js"></script>
+<script src="~/assets/vendor/popper.js/umd/popper.min.js"></script>
+<script src="~/assets/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- END BASE JS -->
+<script src="~/assets/javascript/dataTables.bootstrap.js"></script>
+@*<script src="~/assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>*@
+<!-- BEGIN PLUGINS JS -->
+<script src="~/assets/vendor/stacked-menu/js/stacked-menu.min.js"></script>
+
+<!-- BEGIN THEME JS -->
+<script src="~/assets/javascript/theme.min.js"></script> <!-- END THEME JS -->
+<!-- BEGIN PAGE LEVEL JS -->
+<script>
+        $(document).ready(function () {
+            $("#stacked-menu ul li").find("[href = '" + window.location.pathname + "']").parent().addClass("has-active")
+            console.log($("#stacked-menu ul li").find("[href = '" + window.location.pathname + "']"))
+        })
+</script>

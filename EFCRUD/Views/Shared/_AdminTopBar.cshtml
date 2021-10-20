@@ -1,0 +1,82 @@
+﻿    <!-- .app-header -->
+<header class="app-header app-header-dark">
+    <!-- .top-bar -->
+    <div class="top-bar">
+        <!-- .top-bar-brand -->
+        <div class="top-bar-brand">
+            <!-- toggle aside menu -->
+            <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside-menu"
+                    aria-label="toggle aside menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button> <!-- /toggle aside menu -->
+            <a href="index-2.html">
+                <img src="~/assets/images/logo/logo.png" class="navbar-brand" width="100%" height="45" />
+            </a>
+        </div><!-- /.top-bar-brand -->
+        <!-- .top-bar-list -->
+        <div class="top-bar-list">
+            <!-- .top-bar-item -->
+            <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
+                <!-- toggle menu -->
+                <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="toggle menu">
+                    <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                </button> <!-- /toggle menu -->
+            </div><!-- /.top-bar-item -->
+            <!-- .top-bar-item -->
+            <div class="top-bar-item top-bar-item-right px-0 d-none d-sm-flex">
+                <!-- .btn-account -->
+                <div class="dropdown d-none d-md-flex">
+                    <button class="btn-account" type="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                        <span class="user-avatar user-avatar-md">
+                            @{
+                                if (@Session["image"] != null)
+                                {
+                                    <img src="~/assets/images/userImage/@Session["image"].ToString()" alt="">
+                                }
+                                else
+                                {
+                                    <img src="~/assets/images/avatars/team4.jpg" />
+                                }
+                            }
+                        </span>
+                        <span class="account-summary pr-lg-4 d-none d-lg-block">
+                            <span class="account-name">
+                                @{
+                                    if (@Session["firstname"] != null)
+                                    {
+                                        @Session["firstname"].ToString()
+                                        @Session["lastname"].ToString()
+                                    }
+                                }
+                            </span>
+                            <span class="account-description">
+                                @{
+                                    if (@Session["role"] != null)
+                                    {
+                                        @Session["role"].ToString()
+                                    }
+                                }
+                            </span>
+                        </span>
+                    </button> <!-- .dropdown-menu -->
+                    <div class="dropdown-menu">
+                        <div class="dropdown-arrow d-lg-none" x-arrow=""></div>
+                        <div class="dropdown-arrow ml-3 d-none d-lg-block"></div>
+                        <h6 class="dropdown-header d-none d-md-block d-lg-none"> Beni Arisandi </h6>
+                        <a class="dropdown-item"
+                           href="@Url.Action("index","Profile")"><span class="dropdown-icon fas fa-user"></span> Profile</a>
+                        <a class="dropdown-item" href="@Url.Action("SignOut","Home")">
+                            <span class="dropdown-icon fas fa-sign-out-alt"></span> Logout
+                        </a>
+                        @*<div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Help Center</a> <a class="dropdown-item" href="#">Ask Forum</a> <a class="dropdown-item" href="#">Keyboard Shortcuts</a>*@
+                    </div><!-- /.dropdown-menu -->
+                </div><!-- /.btn-account -->
+            </div><!-- /.top-bar-item -->
+        </div><!-- /.top-bar-list -->
+    </div><!-- /.top-bar -->
+</header>
+<!-- /.app-header -->

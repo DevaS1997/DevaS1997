@@ -1,0 +1,88 @@
+﻿@model EFCRUD.Models.Blog
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style{
+    <link href="~/assets/vendor/summernote/summernote-bs4.min.css" rel="stylesheet" />
+}
+<!-- .page-inner -->
+<div class="page-inner">
+    @Html.Partial("~/Views/Shared/_PageHeader.cshtml", ViewData["table"])
+    <!-- .page-section -->
+    <div class="page-section">
+        <!-- .card -->
+        <div class="card col-md-12">
+            <!-- .card-header -->
+            <div class="card-header text-right">
+
+                <a href="@Url.Action("Index","Blogs")" class="btn btn-primary"> Back </a>
+            </div><!-- /.card-header -->
+            <!-- .card-body -->
+            <div class="card-body">
+                @using (Html.BeginForm("Create", "Blogs", FormMethod.Post, new { enctype = "multipart/form-data", id = "CreateForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-12">
+                            @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                        <input type="file" name="ImageFile" id="ImageFile" class="form-control" />
+                            @Html.HiddenFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BlogCategoryId, "BlogCategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-12">
+                            @Html.DropDownList("BlogCategoryId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.BlogCategoryId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12 text-right">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </div><!-- /.card-body -->
+        </div><!-- /.card -->
+    </div><!-- /.page-section -->
+</div>
+@section footer_script{
+    <script src="~/assets/vendor/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#Description").summernote();
+        })
+    </script>
+}
